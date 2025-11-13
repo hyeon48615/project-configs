@@ -55,7 +55,6 @@ spring:
           limitRefreshPeriod: 1s  # 제한이 1초마다 초기화됨
           timeoutDuration: 0ms  # 허가 대기 시간 (0ms는 대기 없이 즉시 거부)
 
-  spring:
     rabbitmq:
       host: localhost                  # RabbitMQ 브로커의 호스트명 또는 IP. 로컬 테스트 시 'localhost' 사용.
       port: 5672                       # AMQP 포트(기본 5672). 브로커가 다른 포트를 쓰면 해당 포트로 설정.
