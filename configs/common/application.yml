@@ -55,11 +55,11 @@ spring:
           limitRefreshPeriod: 1s  # 제한이 1초마다 초기화됨
           timeoutDuration: 0ms  # 허가 대기 시간 (0ms는 대기 없이 즉시 거부)
 
-    rabbitmq:
-      host: localhost                  # RabbitMQ 브로커의 호스트명 또는 IP. 로컬 테스트 시 'localhost' 사용.
-      port: 5672                       # AMQP 포트(기본 5672). 브로커가 다른 포트를 쓰면 해당 포트로 설정.
-      username: ${RABBITMQ_USERNAME}   # 연결에 사용할 사용자 계정명. 운영 환경에서는 비밀 관리 도구로 보관 권장.
-      password: ${RABBITMQ_PASSWORD}   # 사용자 비밀번호. 절대 코드/레포지토리에 평문 저장 금지(환경변수/Vault 사용 권장).
+  rabbitmq:
+    host: localhost                  # RabbitMQ 브로커의 호스트명 또는 IP. 로컬 테스트 시 'localhost' 사용.
+    port: 5672                       # AMQP 포트(기본 5672). 브로커가 다른 포트를 쓰면 해당 포트로 설정.
+    username: ${RABBITMQ_USERNAME}   # 연결에 사용할 사용자 계정명. 운영 환경에서는 비밀 관리 도구로 보관 권장.
+    password: ${RABBITMQ_PASSWORD}   # 사용자 비밀번호. 절대 코드/레포지토리에 평문 저장 금지(환경변수/Vault 사용 권장).
 #      virtual-host: /                 # 가상 호스트(VHost). 논리적 격리 단위로 여러 애플리케이션을 구분할 때 사용.
 #      connection-timeout: 30000       # 연결 시 타임아웃(ms, 밀리초). 연결 수립을 기다리는 최대 시간(예: 30000 = 30초).
 #      requested-heartbeat: 30         # TCP/AMQP heartbeat 간격(초). 브로커/클라이언트 양측의 연결 유지를 위함(권장 10~60초).
