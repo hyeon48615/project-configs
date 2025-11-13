@@ -72,6 +72,28 @@ spring:
 #          # - auto: 프레임워크가 자동으로 ACK(예외 시 재시도/재배달 동작 확인 필요).
 #          # - none: 기본(없음) / 브로커 기본 동작; 보통 사용하지 않음.
 
+  spring:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://keycloak.code-factory.co.kr/realms/codefactory
+      # SSO 인증을 위한 설정
+      client:
+        registration:
+          keycloak:
+            client-id: ${KEYCLOAK_CLIENT_ID}
+            client-secret: ${KEYCLOAK_CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://localhost:3000/v1/user/authorization/code"
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          keycloak:
+            issuer-uri: https://keycloak.code-factory.co.kr/realms/codefactory
+
+
 feign:
   client:
     config:
